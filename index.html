@@ -6,50 +6,50 @@
     <title>हॉटेल अन्नपूर्णा | शुद्ध शाकाहारी आणि बँक्वेट हॉल</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Khand:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-green: #1a7431;
-            --light-bg: #f4fbf6;
+            --primary-green: #1a5c28;
+            --light-green: #eefbee;
+            --accent-green: #0f3d1a;
             --white: #ffffff;
             --text-dark: #1b263b;
-            --accent-yellow: #ffcc00;
+            --border-color: #c3e6cb;
         }
 
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--light-bg);
+            background-color: #f8faf8;
             color: var(--text-dark);
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3 { font-family: 'Khand', sans-serif; text-transform: uppercase; }
+        h1, h2, h3 { font-family: 'Khand', sans-serif; }
 
-        /* Header */
+        /* Header & Nav */
         header {
-            background: var(--white);
+            background-color: var(--white);
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo { font-size: 26px; font-weight: 700; color: var(--primary-green); }
+        .logo { font-size: 28px; font-weight: 700; color: var(--primary-green); }
 
         nav a { text-decoration: none; color: var(--text-dark); margin-left: 20px; font-weight: 600; }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1500&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -60,10 +60,9 @@
             text-align: center;
         }
 
-        /* Menu Section with Images */
-        .section { padding: 60px 8%; text-align: center; }
-
-        .section-title { font-size: 2.8rem; color: var(--primary-green); margin-bottom: 40px; }
+        /* Menu Section */
+        .section { padding: 60px 10%; text-align: center; }
+        .section-title { font-size: 2.5rem; color: var(--primary-green); margin-bottom: 40px; }
 
         .menu-grid {
             display: grid;
@@ -71,156 +70,160 @@
             gap: 30px;
         }
 
-        .menu-card {
+        .menu-item {
             background: white;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 1px solid var(--border-color);
         }
-
-        .menu-card:hover { transform: translateY(-10px); }
 
         .dish-img {
             width: 100%;
             height: 200px;
-            background-color: #eee;
+            background-color: #ddd; /* Placeholder color */
             object-fit: cover;
+            display: block;
         }
 
-        .dish-info { padding: 20px; }
+        .menu-content { padding: 15px; }
+        .menu-item h3 { margin: 10px 0; color: var(--accent-green); font-size: 1.5rem; }
 
-        /* Highlighting Features in Boxes */
-        .feature-container {
+        /* Highlight Boxes (Banquet & Purity) */
+        .highlight-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            margin-top: 30px;
-        }
-
-        .feature-box {
-            background: var(--primary-green);
-            color: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(26, 116, 49, 0.3);
-        }
-
-        .feature-box i { font-size: 2.5rem; margin-bottom: 15px; color: var(--accent-yellow); }
-
-        /* Map Section Box */
-        .map-container {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 8px solid var(--primary-green);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            display: inline-block;
             margin-top: 20px;
-            max-width: 600px;
         }
 
-        .map-btn {
-            background-color: #db4437; /* Google Map Red */
-            color: white;
-            padding: 12px 25px;
+        .highlight-box {
+            background: var(--white);
+            border: 2px solid var(--primary-green);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(26, 92, 40, 0.1);
+        }
+
+        .highlight-box h4 { font-size: 1.8rem; color: var(--primary-green); margin-bottom: 10px; }
+
+        /* Map Box */
+        .map-container {
+            margin-top: 40px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            padding: 20px;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .map-link {
+            color: #d9534f; /* Location Red Color */
             text-decoration: none;
-            border-radius: 8px;
             font-weight: bold;
-            display: inline-flex;
+            font-size: 1.2rem;
+            display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
-            margin-top: 15px;
-            transition: 0.3s;
         }
 
-        .map-btn:hover { background-color: #c53929; transform: scale(1.05); }
+        /* Footer */
+        footer { background: var(--accent-green); color: white; padding: 30px; text-align: center; margin-top: 50px; }
 
-        footer { background: #111; color: #ccc; padding: 30px; text-align: center; margin-top: 50px; }
+        .btn {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-        @media (max-width: 768px) { .hero h2 { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo"><i class="fas fa-utensils"></i> हॉटेल अन्नपूर्णा</div>
+        <div class="logo">हॉटेल अन्नपूर्णा</div>
         <nav>
+            <a href="#home">होम</a>
             <a href="#menu">मेन्यू</a>
-            <a href="#speciality">सुविधा</a>
             <a href="#contact">संपर्क</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <h2 style="font-size: 3.5rem; margin: 0;">अस्सल शाकाहारी चव</h2>
-        <p style="font-size: 1.4rem;">तुमच्या कुटुंबासाठी एक परिपूर्ण ठिकाण</p>
-    </section>
+    <div class="hero" id="home">
+        <h2 style="font-size: 3.5rem; margin: 0;">शुद्ध सात्विक मेजवानी</h2>
+        <p style="font-size: 1.5rem;">उत्कृष्ट चव आणि प्रसन्न वातावरण</p>
+        <br>
+        <a href="tel:+919665330230" class="btn">आत्ताच कॉल करा</a>
+    </div>
 
-    <section class="section" id="menu">
+    <div class="section" id="menu">
         <h2 class="section-title">आमचा खास मेन्यू</h2>
         <div class="menu-grid">
-            <div class="menu-card">
-                <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=500&q=80" alt="Paneer Tikka" class="dish-img">
-                <div class="dish-info">
-                    <h3>पनीर टिक्का मसाला</h3>
-                    <p>स्पेशल मसाला ग्रेव्ही आणि मऊ पनीर.</p>
-                </div>
-            </div>
-            <div class="menu-card">
-                <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=500&q=80" alt="Biryani" class="dish-img">
-                <div class="dish-info">
-                    <h3>व्हेज बिर्याणी</h3>
-                    <p>सुगंधी बासमती तांदळाची खास दम बिर्याणी.</p>
-                </div>
-            </div>
-            <div class="menu-card">
-                <img src="https://images.unsplash.com/photo-1601050633647-3f92c450f336?auto=format&fit=crop&w=500&q=80" alt="Kaju Curry" class="dish-img">
-                <div class="dish-info">
-                    <h3>काजू करी</h3>
-                    <p>काजूची क्रीमी आणि शाही ग्रेव्ही.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="speciality" style="background-color: #fff;">
-        <h2 class="section-title">आमची वैशिष्ट्ये</h2>
-        <div class="feature-container">
-            <div class="feature-box">
-                <i class="fas fa-hall-bell"></i>
-                <h3>बँक्वेट हॉल</h3>
-                <p>वाढदिवस आणि घरगुती कार्यक्रमांसाठी प्रशस्त सोय.</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-leaf"></i>
-                <h3>१००% शुद्धता</h3>
-                <p>संपूर्ण शाकाहारी आणि स्वच्छतेची पूर्ण खात्री.</p>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-parking"></i>
-                <h3>प्रशस्त पार्किंग</h3>
-                <p>तुमच्या वाहनांसाठी सुरक्षित आणि मोठी जागा.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="contact">
-        <h2 class="section-title">पत्ता आणि लोकेशन</h2>
-        <div class="map-container">
-            <h3 style="margin-top: 0; color: #1a7431;">📍 हॉटेल अन्नपूर्णा, कोरेगाव</h3>
-            <p>सातारा - पंढरपूर रोड, कोरेगाव, जिल्हा - सातारा, महाराष्ट्र ४१५५०१</p>
-            <p><strong>संपर्क:</strong> +91 96653 30230</p>
             
-            <a href="https://maps.app.goo.gl/KB4kCv4tC2aQ7UUW6" target="_blank" class="map-btn">
-                <i class="fas fa-map-marked-alt"></i> गुगल मॅपवर पहा
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=500&q=60" alt="Paneer Tikka" class="dish-img">
+                <div class="menu-content">
+                    <h3>पनीर टिक्का मसाला</h3>
+                    <p>ताजे पनीर आणि खास मसालेदार ग्रेव्ही.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&w=500&q=60" alt="Kaju Curry" class="dish-img">
+                <div class="menu-content">
+                    <h3>काजू करी</h3>
+                    <p>श्रीमंत काजूची ग्रेव्ही आणि उत्कृष्ट चव.</p>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=500&q=60" alt="Special Thali" class="dish-img">
+                <div class="menu-content">
+                    <h3>अन्नपूर्णा स्पेशल थाळी</h3>
+                    <p>भरपूर पदार्थांसह पूर्ण जेवण.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section" style="background-color: var(--light-green);">
+        <h2 class="section-title">आमची वैशिष्ट्ये</h2>
+        <div class="highlight-container">
+            
+            <div class="highlight-box">
+                <h4>🏢 भव्य बँक्वेट हॉल</h4>
+                <p>वाढदिवस, साखरपुडा आणि छोट्या कौटुंबिक सोहळ्यांसाठी कोरेगावमधील सर्वोत्तम प्रशस्त हॉल उपलब्ध.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h4>🥦 १००% शुद्ध शाकाहारी</h4>
+                <p>आम्ही स्वच्छतेची आणि शुद्धतेची पूर्ण काळजी घेतो. घरगुती चवीचे अस्सल शाकाहारी जेवण.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section" id="contact">
+        <h2 class="section-title">संपर्क आणि ठिकाण</h2>
+        <p><strong>पत्ता:</strong> सातारा - पंढरपूर रोड, कोरेगाव, महाराष्ट्र</p>
+        <p><strong>वेळ:</strong> सकाळी १०:०० ते रात्री ११:००</p>
+        
+        <div class="map-container">
+            <a href="https://maps.app.goo.gl/KB4kCv4tC2aQ7UUW6" class="map-link" target="_blank">
+                <span>📍</span> गुगल मॅपवर आम्हाला शोधा
             </a>
         </div>
-    </section>
+    </div>
 
     <footer>
-        <p>© 2026 हॉटेल अन्नपूर्णा | सर्व हक्क राखीव</p>
-    </section>
+        <p>© 2026 हॉटेल अन्नपूर्णा | डिझाइन : अमन</p>
+    </footer>
 
 </body>
 </html>

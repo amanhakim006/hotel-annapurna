@@ -17,7 +17,7 @@
             --white: #ffffff;
             --text-dark: #1a1a1a;
             --gold: #c29547;
-            --shadow: 0 15px 35px rgba(0,0,0,0.1);
+            --shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
         * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
@@ -29,63 +29,73 @@
             background-color: var(--light-bg);
             color: var(--text-dark);
             scroll-behavior: smooth;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
-        /* Premium Header */
+        /* Professional Header */
         header {
             background: var(--white);
-            padding: 20px 0 0 0;
+            padding: 15px 0 0 0;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .logo { 
-            font-size: 34px; 
+            font-size: 28px; 
             font-weight: 800; 
             color: var(--primary-green);
-            margin: 0 0 15px 0;
+            margin: 0 0 10px 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
+            letter-spacing: -0.5px;
         }
 
-        .logo i { color: var(--accent-green); font-size: 28px; }
+        .logo i { color: var(--accent-green); font-size: 24px; }
 
-        /* Green Navigation Bar */
+        /* Compact Green Navigation Bar for Mobile */
         nav {
             background-color: var(--primary-green);
             display: flex;
             justify-content: center;
-            gap: 15px;
-            padding: 12px 10px;
-            overflow-x: auto;
+            gap: 8px; /* Reduced gap for mobile */
+            padding: 10px 5px;
+            overflow-x: hidden; /* Prevent horizontal scroll on small screens */
         }
 
         nav a { 
             text-decoration: none; 
             color: var(--white); 
             font-weight: 700; 
-            font-size: 13px;
+            font-size: 11px; /* Slightly smaller for mobile visibility */
             font-family: 'Montserrat', sans-serif;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             white-space: nowrap;
-            padding: 5px 10px;
+            padding: 4px 6px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 4px;
             transition: 0.3s;
         }
 
+        nav a i { font-size: 10px; }
         nav a:hover { color: var(--gold); }
+
+        /* Desktop Adjustments */
+        @media (min-width: 768px) {
+            .logo { font-size: 34px; }
+            nav { gap: 25px; padding: 12px 20px; }
+            nav a { font-size: 14px; gap: 8px; }
+            nav a i { font-size: 13px; }
+        }
 
         /* Hero Section */
         .hero {
-            height: 70vh;
+            height: 60vh;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('annapurna.png');
             background-size: cover;
             background-position: center;
@@ -95,110 +105,122 @@
             align-items: center;
             color: white;
             text-align: center;
-            padding: 40px 20px;
+            padding: 20px;
         }
 
-        .hero h2 { font-size: 3.5rem; margin: 0; font-weight: 800; line-height: 1.1; text-shadow: 2px 4px 10px rgba(0,0,0,0.3); }
-        .hero p { font-size: 1.3rem; margin: 20px 0 30px; font-family: 'Montserrat', sans-serif; font-weight: 400; }
+        .hero h2 { font-size: 2.5rem; margin: 0; font-weight: 800; line-height: 1.2; }
+        .hero p { font-size: 1.1rem; margin: 15px 0 25px; font-family: 'Montserrat', sans-serif; font-weight: 400; opacity: 0.9; }
 
         .btn-book {
             background-color: var(--accent-green);
             color: white;
-            padding: 18px 45px;
+            padding: 15px 35px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: 0.3s;
-            box-shadow: 0 8px 25px rgba(30, 125, 77, 0.4);
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(30, 125, 77, 0.4);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         /* Section Styling */
-        .section { padding: 80px 20px; text-align: center; max-width: 1200px; margin: auto; }
-        .section-title { font-size: 2.8rem; margin-bottom: 50px; color: var(--primary-green); font-weight: 800; position: relative; }
-        .section-title::after { content: ''; width: 100px; height: 6px; background: var(--gold); display: block; margin: 15px auto; border-radius: 10px; }
+        .section { padding: 60px 15px; text-align: center; max-width: 1100px; margin: auto; }
+        .section-title { 
+            font-size: 2.2rem; 
+            margin-bottom: 35px; 
+            color: var(--primary-green); 
+            font-weight: 800; 
+            position: relative; 
+            display: inline-block;
+        }
+        .section-title i { margin-right: 10px; color: var(--accent-green); }
+        .section-title::after { 
+            content: ''; 
+            width: 60%; 
+            height: 4px; 
+            background: var(--gold); 
+            display: block; 
+            margin: 8px auto 0; 
+            border-radius: 10px; 
+        }
 
         /* Menu Grid */
-        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         @media (min-width: 768px) { .menu-grid { grid-template-columns: repeat(3, 1fr); } }
 
-        .menu-item { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: 0.3s; }
-        .menu-item:hover { transform: translateY(-10px); }
-        .dish-img { width: 100%; height: 260px; object-fit: cover; }
-        .menu-content { padding: 25px; }
-        .menu-content h3 { font-size: 2rem; margin: 0; font-weight: 700; color: var(--primary-green); }
-        .menu-content p { color: #666; font-size: 1.1rem; margin-top: 10px; }
+        .menu-item { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); }
+        .dish-img { width: 100%; height: 220px; object-fit: cover; }
+        .menu-content { padding: 20px; }
+        .menu-content h3 { font-size: 1.6rem; margin: 0; font-weight: 700; color: var(--primary-green); }
+        .menu-content p { color: #666; font-size: 1rem; margin-top: 8px; }
 
-        /* Enhanced Features Section */
-        .features-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        /* Features Section */
+        .features-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
         @media (min-width: 768px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
 
         .feature-card {
             background: var(--white);
-            padding: 40px 30px;
-            border-radius: 25px;
+            padding: 30px 20px;
+            border-radius: 15px;
             box-shadow: var(--shadow);
             text-align: left;
             display: flex;
             align-items: flex-start;
-            gap: 25px;
-            border-bottom: 8px solid var(--accent-green);
+            gap: 15px;
+            border-bottom: 5px solid var(--accent-green);
         }
 
-        .feature-card i { font-size: 3rem; color: var(--accent-green); }
-        .feature-card h4 { margin: 0; font-size: 1.8rem; font-weight: 800; color: var(--primary-green); }
-        .feature-card p { margin: 10px 0 0; font-size: 1.1rem; color: #555; }
+        .feature-card i { font-size: 2rem; color: var(--accent-green); }
+        .feature-card h4 { margin: 0; font-size: 1.4rem; font-weight: 800; color: var(--primary-green); }
+        .feature-card p { margin: 8px 0 0; font-size: 0.95rem; color: #555; }
 
-        /* Contact & Map Block */
+        /* Contact Box */
         .contact-container {
             background: var(--white);
-            padding: 60px 30px;
-            border-radius: 30px;
+            padding: 40px 20px;
+            border-radius: 20px;
             box-shadow: var(--shadow);
-            margin-top: 40px;
+            margin-top: 20px;
         }
 
-        .contact-info { margin-bottom: 40px; font-size: 1.3rem; }
-        .contact-info div { margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 15px; }
-        .contact-info i { color: var(--accent-green); font-size: 1.8rem; width: 30px; }
+        .contact-info { margin-bottom: 25px; font-size: 1.1rem; }
+        .contact-info div { margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .contact-info i { color: var(--accent-green); font-size: 1.3rem; }
 
         .map-box {
             background: #fffafa;
-            border: 2px dashed #d9534f;
-            padding: 35px;
-            border-radius: 20px;
+            border: 1.5px dashed #d9534f;
+            padding: 25px;
+            border-radius: 15px;
             display: inline-block;
             width: 100%;
-            max-width: 650px;
         }
 
         .map-btn {
             color: #d9534f;
             text-decoration: none;
             font-weight: 800;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
             font-family: 'Montserrat', sans-serif;
         }
 
         footer {
             background: var(--primary-green);
             color: white;
-            padding: 60px 20px;
+            padding: 40px 20px;
             text-align: center;
         }
 
-        .social-icons { margin-top: 25px; font-size: 2.2rem; display: flex; justify-content: center; gap: 30px; }
-        .social-icons i:hover { color: var(--gold); }
+        .social-icons { margin-top: 20px; font-size: 1.8rem; display: flex; justify-content: center; gap: 20px; }
 
     </style>
 </head>
@@ -217,8 +239,8 @@
     </header>
 
     <div class="hero" id="home">
-        <h2>अस्सल शाकाहारी चवीचे माहेरघर</h2>
-        <p>Premium Pure Veg Dining & Royal Banquet Hall</p>
+        <h2>अस्सल शाकाहारी मेजवानी</h2>
+        <p>Pure Veg Dining & Royal Banquet Hall</p>
         <a href="tel:+919665330230" class="btn-book">
             <i class="fas fa-chair"></i> Book Your Seat
         </a>
@@ -231,21 +253,21 @@
                 <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=500&q=60" alt="Paneer" class="dish-img">
                 <div class="menu-content">
                     <h3>पनीर टिक्का मसाला</h3>
-                    <p>ताज्या पनीरचे तुकडे आणि खास गावरान खमंग मसाल्यांची तडकेदार ग्रेव्ही.</p>
+                    <p>ताज्या पनीरचे तुकडे आणि खमंग मसाल्यांची तडकेदार ग्रेव्ही.</p>
                 </div>
             </div>
             <div class="menu-item">
                 <img src="kaju-curry.webp" alt="Kaju Curry" class="dish-img">
                 <div class="menu-content">
                     <h3>काजू मसाला करी</h3>
-                    <p>भरपूर काजू आणि रिच क्रीमी ग्रेव्हीची एक अस्सल शाही मेजवानी.</p>
+                    <p>भरपूर काजू आणि रिच क्रीमी ग्रेव्हीची शाही मेजवानी.</p>
                 </div>
             </div>
             <div class="menu-item">
                 <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=500&q=60" alt="Thali" class="dish-img">
                 <div class="menu-content">
                     <h3>अन्नपूर्णा स्पेशल थाळी</h3>
-                    <p>दोन भाज्या, वरण-भात, चपाती, स्वीट आणि बरंच काही एकाच थाळीत पूर्ण जेवण.</p>
+                    <p>भरपूर पदार्थांसह एकाच थाळीत पूर्ण सात्विक जेवण.</p>
                 </div>
             </div>
         </div>
@@ -254,39 +276,34 @@
     <div class="section" id="special" style="background-color: #fff;">
         <h2 class="section-title"><i class="fas fa-award"></i> आमची खास वैशिष्ट्ये</h2>
         <div class="features-grid">
-            
             <div class="feature-card">
                 <i class="fas fa-hotel"></i>
                 <div>
                     <h4>भव्य बँक्वेट हॉल</h4>
-                    <p>वाढदिवस, साखरपुडा, डोहळा जेवण आणि सर्व कौटुंबिक सोहळ्यांसाठी कोरेगावमधील सर्वोत्तम वातानुकूलित आणि प्रशस्त हॉल उपलब्ध.</p>
+                    <p>वाढदिवस आणि सर्व कौटुंबिक सोहळ्यांसाठी कोरेगावमधील सर्वोत्तम हॉल.</p>
                 </div>
             </div>
-
             <div class="feature-card">
                 <i class="fas fa-leaf"></i>
                 <div>
                     <h4>१००% शुद्ध शाकाहारी</h4>
-                    <p>आम्ही अन्नाची शुद्धता आणि सात्विकता जपतो. उत्तम दर्जाचे तेल आणि ताजे मसाले वापरून बनवलेले अस्सल शाकाहारी पदार्थ.</p>
+                    <p>आम्ही अन्नाची शुद्धता आणि सात्विकता जपतो. ताजे मसाले आणि उत्तम दर्जा.</p>
                 </div>
             </div>
-
             <div class="feature-card">
                 <i class="fas fa-car"></i>
                 <div>
                     <h4>प्रशस्त पार्किंग सोय</h4>
-                    <p>तुमच्या दुचाकी आणि चारचाकी वाहनांसाठी सुरक्षित, मोकळी आणि विनामूल्य पार्किंग सुविधा हॉटेलच्या परिसरात उपलब्ध आहे.</p>
+                    <p>तुमच्या वाहनांसाठी सुरक्षित आणि मोकळी पार्किंग सुविधा मोफत उपलब्ध.</p>
                 </div>
             </div>
-
             <div class="feature-card">
                 <i class="fas fa-hands-bubbles"></i>
                 <div>
                     <h4>स्वच्छता आणि हायजीन</h4>
-                    <p>स्वयंपाकघरापासून बसण्याच्या जागेपर्यंत सर्वत्र कडक स्वच्छतेचे नियम पाळले जातात. सुरक्षित जेवणाचा परिपूर्ण अनुभव.</p>
+                    <p>स्वयंपाकघरापासून सर्वत्र कडक स्वच्छतेचे नियम पाळले जातात.</p>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -294,30 +311,27 @@
         <h2 class="section-title"><i class="fas fa-address-book"></i> संपर्क आणि ठिकाण</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <div><i class="fas fa-map-location-dot"></i> <strong>पत्ता:</strong> सातारा - पंढरपूर रोड, कोरेगाव, महाराष्ट्र ४१५५०१</div>
+                <div><i class="fas fa-map-location-dot"></i> <strong>पत्ता:</strong> कोरेगाव, महाराष्ट्र ४१५५०१</div>
                 <div><i class="fas fa-phone-volume"></i> <strong>संपर्क:</strong> +91 96653 30230</div>
-                <div><i class="fas fa-clock"></i> <strong>वेळ:</strong> दररोज सकाळी १०:०० ते रात्री ११:०० पर्यंत</div>
+                <div><i class="fas fa-clock"></i> <strong>वेळ:</strong> सकाळी १०:०० ते रात्री ११:००</div>
             </div>
-
             <div class="map-box">
                 <a href="https://maps.app.goo.gl/KB4kCv4tC2aQ7UUW6" class="map-btn" target="_blank">
-                    <i class="fas fa-map-marked-alt"></i> <i class="fas fa-location-dot"></i> गुगल मॅपवर आम्हाला शोधा
+                    <i class="fas fa-location-dot"></i> गुगल मॅपवर आम्हाला शोधा
                 </a>
             </div>
         </div>
     </div>
 
     <footer>
-        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 10px;">हॉटेल अन्नपूर्णा</h2>
-        <p>कोरेगावमधील शाकाहारी जेवणाचे आणि बँक्वेट हॉलचे अग्रगण्य नाव.</p>
-        
+        <h2 style="color: white; font-size: 2rem; margin-bottom: 5px;">हॉटेल अन्नपूर्णा</h2>
+        <p style="font-size: 0.9rem; opacity: 0.8;">कोरेगावमधील शाकाहारी जेवणाचे अग्रगण्य नाव.</p>
         <div class="social-icons">
             <i class="fab fa-instagram"></i>
             <i class="fab fa-facebook"></i>
             <i class="fab fa-whatsapp"></i>
         </div>
-        
-        <p style="margin-top: 40px; opacity: 0.7; font-family: 'Montserrat', sans-serif;">
+        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.6;">
             © 2026 Hotel Annapurna | Designed by Aman
         </p>
     </footer>

@@ -32,7 +32,7 @@
             line-height: 1.6;
         }
 
-        /* Compact Header & Navigation */
+        /* Header & Navigation */
         header {
             background: var(--white);
             padding: 15px 0 0 0;
@@ -104,16 +104,18 @@
         .booking-form { max-width: 500px; margin: auto; text-align: left; }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; font-weight: 800; margin-bottom: 8px; color: var(--primary-green); font-size: 1.2rem; }
-        .form-group input, .form-group select { 
+        .form-group input { 
             width: 100%; padding: 14px; border: 2px solid #ddd; border-radius: 10px; 
             font-family: 'Montserrat', sans-serif; font-size: 1rem;
         }
 
+        /* No Underline for Booking Button */
         .btn-confirm {
             background-color: #25D366; 
             color: white; width: 100%; padding: 16px; border: none; border-radius: 10px;
             font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.1rem;
             cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
+            text-decoration: none; /* Underline Removed */
         }
 
         /* Section Styling */
@@ -137,7 +139,7 @@
         .menu-content { padding: 25px; }
         .menu-content h3 { font-size: 2rem; font-weight: 700; color: var(--primary-green); margin: 0; }
 
-        /* Enhanced Features Section - Back to Original Box Style */
+        /* Features Section */
         .features-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         @media (min-width: 768px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
 
@@ -151,31 +153,18 @@
             align-items: flex-start;
             gap: 20px;
             border-bottom: 8px solid var(--accent-green);
-            transition: 0.3s;
         }
 
-        .feature-box:hover { transform: translateY(-5px); }
         .feature-box i { font-size: 3rem; color: var(--accent-green); flex-shrink: 0; }
         .feature-box h4 { margin: 0; font-size: 1.8rem; font-weight: 800; color: var(--primary-green); }
         .feature-box p { margin: 12px 0 0; font-size: 1.1rem; color: #444; font-weight: 400; }
 
-        /* Contact Details */
-        .contact-card { background: #fff; padding: 40px 25px; border-radius: 25px; box-shadow: var(--shadow); margin-top: 20px; }
-        .contact-card p { font-size: 1.3rem; margin: 15px 0; }
-        .contact-card i { color: var(--accent-green); margin-right: 12px; font-size: 1.6rem; }
-
-        .map-box {
-            margin-top: 30px;
-            padding: 25px;
-            border: 2px dashed #d9534f;
-            border-radius: 20px;
-            background-color: #fffafa;
-            display: inline-block;
-            width: 100%;
-        }
+        /* Social Icons Size */
+        .social-icons { margin-top: 25px; display: flex; justify-content: center; gap: 35px; }
+        .social-icons i { font-size: 2.8rem; color: var(--white); transition: 0.3s; cursor: pointer; }
+        .social-icons i:hover { color: var(--gold); transform: scale(1.1); }
 
         footer { background: var(--primary-green); color: white; padding: 60px 20px; text-align: center; }
-
     </style>
 </head>
 <body>
@@ -194,7 +183,7 @@
     <div class="hero" id="home">
         <h2>अस्सल शाकाहारी मेजवानी</h2>
         <p>Premium Pure Veg Dining & Royal Banquet Hall</p>
-        <a href="#booking" class="btn-confirm" style="width:auto; padding: 18px 45px; background-color: var(--accent-green);">
+        <a href="#booking" class="btn-confirm" style="width:auto; padding: 18px 45px; background-color: var(--accent-green); text-decoration: none;">
             Book Your Seat
         </a>
     </div>
@@ -217,10 +206,9 @@
         </div>
     </div>
 
-    <div class="section" id="special" style="background-color: #fff;">
+    <div class="section" id="special">
         <h2 class="section-title"><i class="fas fa-award"></i> आमची खास वैशिष्ट्ये</h2>
         <div class="features-grid">
-            
             <div class="feature-box">
                 <i class="fas fa-hotel"></i>
                 <div>
@@ -228,31 +216,27 @@
                     <p>वाढदिवस, साखरपुडा आणि सर्व कौटुंबिक सोहळ्यांसाठी कोरेगावमधील सर्वोत्तम प्रशस्त हॉल उपलब्ध.</p>
                 </div>
             </div>
-
             <div class="feature-box">
                 <i class="fas fa-leaf"></i>
                 <div>
                     <h4>१००% शुद्ध शाकाहारी</h4>
-                    <p>आम्ही अन्नाची शुद्धता आणि सात्विकता जपतो. उत्तम दर्जाचे तेल आणि ताजे मसाले वापरून बनवलेले पदार्थ.</p>
+                    <p>आम्ही अन्नाची शुद्धता जपतो. उत्तम दर्जाचे तेल आणि ताजे मसाले वापरून बनवलेले पदार्थ.</p>
                 </div>
             </div>
-
             <div class="feature-box">
                 <i class="fas fa-parking"></i>
                 <div>
                     <h4>प्रशस्त पार्किंग सोय</h4>
-                    <p>तुमच्या दुचाकी आणि चारचाकी वाहनांसाठी सुरक्षित, मोकळी आणि मोफत पार्किंग सुविधा हॉटेलच्या परिसरात आहे.</p>
+                    <p>तुमच्या वाहनांसाठी सुरक्षित, मोकळी आणि मोफत पार्किंग सुविधा हॉटेलच्या परिसरात आहे.</p>
                 </div>
             </div>
-
             <div class="feature-box">
                 <i class="fas fa-hands-bubbles"></i>
                 <div>
                     <h4>स्वच्छता आणि हायजीन</h4>
-                    <p>स्वयंपाकघरापासून बसण्याच्या जागेपर्यंत सर्वत्र कडक स्वच्छतेचे नियम पाळले जातात. सुरक्षित जेवणाचा अनुभव.</p>
+                    <p>स्वयंपाकघरापासून बसण्याच्या जागेपर्यंत सर्वत्र कडक स्वच्छतेचे नियम पाळले जातात.</p>
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -262,20 +246,15 @@
             <div class="booking-form">
                 <div class="form-group">
                     <label>तुमचे नाव (Name):</label>
-                    <input type="text" id="custName" placeholder="नाव लिहा">
+                    <input type="text" id="custName" placeholder="तुमचे नाव लिहा">
                 </div>
                 <div class="form-group">
                     <label>तारीख (Date):</label>
                     <input type="date" id="bookDate">
                 </div>
                 <div class="form-group">
-                    <label>वेळ (Time):</label>
-                    <select id="bookTime">
-                        <option>दुपारी १२:०० - १:३०</option>
-                        <option>दुपारी १:३० - ३:००</option>
-                        <option>संध्याकाळी ७:३० - ९:००</option>
-                        <option>रात्री ९:०० - १०:३०</option>
-                    </select>
+                    <label>वेळ (Time - e.g. 8:30 PM):</label>
+                    <input type="text" id="bookTime" placeholder="उदा. ८:३० वाजता">
                 </div>
                 <div class="form-group">
                     <label>व्यक्ती (Guests):</label>
@@ -289,56 +268,27 @@
     </div>
 
     <div class="section" id="contact">
-        <h2 class="section-title"><i class="fas fa-map-location-dot"></i> संपर्क आणि ठिकाण</h2>
-        <div class="contact-card">
-            <p><i class="fas fa-map-marked-alt"></i> <strong>पत्ता:</strong> कोरेगाव, महाराष्ट्र ४१५५०१</p>
-            <p><i class="fas fa-phone-volume"></i> <strong>संपर्क:</strong> +91 9373242452</p>
-            <p><i class="fas fa-clock"></i> <strong>वेळ:</strong> सकाळी १०:०० ते रात्री ११:००</p>
-            
-            <div class="map-box">
-                <a href="https://maps.app.goo.gl/KB4kCv4tC2aQ7UUW6" target="_blank" style="color:#d9534f; font-weight:800; text-decoration:none; font-size: 1.4rem; font-family: 'Montserrat';">
-                    </i> <i class="fas fa-map"></i> गुगल मॅपवर आम्हाला शोधा
-                </a>
-            </div>
+        <h2 class="section-title"><i class="fas fa-phone"></i> संपर्क आणि ठिकाण</h2>
+        <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: var(--shadow);">
+            <p><i class="fas fa-map-marker-alt" style="color:var(--accent-green)"></i> कोरेगाव, महाराष्ट्र ४१५५०१</p>
+            <p><i class="fas fa-phone-alt" style="color:var(--accent-green)"></i> +91 9373242452</p>
+            <a href="https://maps.app.goo.gl/KB4kCv4tC2aQ7UUW6" target="_blank" style="color:#d9534f; font-weight:800; text-decoration:none; font-size: 1.2rem;">
+                <i class="fas fa-directions"></i> गुगल मॅपवर आम्हाला शोधा
+            </a>
         </div>
     </div>
 
-<footer id="footer">
-        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 10px;">हॉटेल अन्नपूर्णा</h2>
-        <p style="font-size: 1.2rem; opacity: 0.9;">कोरेगावमधील शाकाहारी जेवणाचे अग्रगण्य नाव.</p>
-        
+    <footer>
+        <h2 style="color: white; font-size: 2.2rem; margin-bottom: 5px;">हॉटेल अन्नपूर्णा</h2>
         <div class="social-icons">
-            <a href="https://www.instagram.com/annapurna_pureveg_/?hl=en" style="color: white;"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/HotelAnnapurna.PureVeg/" style="color: white;"><i class="fab fa-facebook"></i></a>
-            <a href="https://wa.me/919373242452" style="color: white;"><i class="fab fa-whatsapp"></i></a>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-whatsapp"></i>
         </div>
-        
-        <p style="margin-top: 40px; font-size: 1rem; opacity: 0.6;">
+        <p style="margin-top: 40px; font-size: 1rem; opacity: 0.7;">
             © 2026 Hotel Annapurna | Designed by Aman
         </p>
     </footer>
-
-    <style>
-        .social-icons {
-            margin-top: 25px;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-        }
-
-        .social-icons i {
-            font-size: 1.5rem; /* Size ko 3rem kiya hai jo kafi badi dikhegi */
-            transition: 0.3s ease;
-        }
-
-        .social-icons i:hover {
-            color: var(--gold);
-            transform: translateY(-5px);
-        }
-    </style>
-
-</body>
-</html>
 
     <script>
         function sendToWhatsapp() {
@@ -348,8 +298,8 @@
             let guests = document.getElementById('guests').value;
             let phone = "919373242452"; 
 
-            if(name == "" || date == "") {
-                alert("कृपया नाव आणि तारीख भरा!");
+            if(name == "" || date == "" || time == "") {
+                alert("कृपया सर्व माहिती (नाव, तारीख आणि वेळ) भरा!");
                 return;
             }
 

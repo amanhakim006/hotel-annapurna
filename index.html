@@ -278,18 +278,39 @@
         </div>
     </div>
 
-    <footer>
-        <h2 style="color: white; font-size: 2.2rem; margin-bottom: 5px;">हॉटेल अन्नपूर्णा</h2>
+<footer id="footer">
+        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 10px;">हॉटेल अन्नपूर्णा</h2>
+        <p style="font-size: 1.2rem; opacity: 0.9;">कोरेगावमधील शाकाहारी जेवणाचे अग्रगण्य नाव.</p>
+        
         <div class="social-icons">
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-whatsapp"></i>
+            <a href="https://www.instagram.com/annapurna_pureveg_/?hl=en" style="color: white;"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/HotelAnnapurna.PureVeg/" style="color: white;"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/919373242452" style="color: white;"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <p style="margin-top: 40px; font-size: 1rem; opacity: 0.7;">
+        
+        <p style="margin-top: 40px; font-size: 1rem; opacity: 0.6;">
             © 2026 Hotel Annapurna | Designed by Aman
         </p>
     </footer>
 
+    <style>
+        .social-icons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .social-icons i {
+            font-size: 2rem; /* Size ko 3rem kiya hai jo kafi badi dikhegi */
+            transition: 0.3s ease;
+        }
+
+        .social-icons i:hover {
+            color: var(--gold);
+            transform: translateY(-5px);
+        }
+    </style>
     <script>
         function sendToWhatsapp() {
             let name = document.getElementById('custName').value;

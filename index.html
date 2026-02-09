@@ -3,60 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>हॉटेल अन्नपूर्णा | शुद्ध शाकाहारी आणि बँक्वेट हॉल</title>
+    <title>हॉटेल अन्नपूर्णा | शुद्ध शाकाहारी</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Yantrajaal:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-green: #2d6a4f;
-            --light-bg: #f0f7f4;
-            --dark-green: #1b4332;
+            --primary-green: #1b4332;
+            --accent-green: #2d6a4f;
+            --light-bg: #f8faf9;
             --white: #ffffff;
-            --text-main: #2d3436;
+            --text-dark: #1b263b;
+            --gold: #d4a373;
         }
 
+        * { box-sizing: border-box; }
+
         body {
-            font-family: 'Mukta', sans-serif; /* Global Marathi Font */
+            font-family: 'Poppins', 'Yantrajaal', sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--light-bg);
-            color: var(--text-main);
-            line-height: 1.5;
+            color: var(--text-dark);
             scroll-behavior: smooth;
         }
 
-        /* Fixing the word gap and rendering issue */
-        h1, h2, h3, h4 { 
-            font-family: 'Mukta', sans-serif; 
-            font-weight: 700; 
-            color: var(--dark-green);
-            letter-spacing: normal; /* Removes extra gaps */
-            word-spacing: normal;
-        }
-
+        /* Mobile Optimized Header */
         header {
-            background: rgba(255, 255, 255, 0.98);
-            padding: 15px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            background: var(--white);
+            padding: 15px 10px;
+            text-align: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo { font-size: 28px; font-weight: 800; color: var(--primary-green); display: flex; align-items: center; gap: 10px; }
+        .logo { 
+            font-family: 'Yantrajaal', sans-serif;
+            font-size: 24px; 
+            font-weight: 900; 
+            color: var(--primary-green);
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
 
-        nav a { text-decoration: none; color: var(--text-main); margin-left: 25px; font-weight: 600; transition: 0.3s; }
-        nav a:hover { color: var(--primary-green); }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 8px;
+        }
 
+        nav a { 
+            text-decoration: none; 
+            color: var(--text-dark); 
+            font-weight: 600; 
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        /* Hero Section */
         .hero {
-            height: 70vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('annapurna.png');
+            height: 55vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('annapurna.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -65,107 +78,113 @@
             align-items: center;
             color: white;
             text-align: center;
-            padding: 0 20px;
+            padding: 20px;
         }
 
-        .hero h2 { color: white; font-size: 3.8rem; margin: 0; }
-        .hero p { font-size: 1.6rem; margin: 10px 0 30px; font-weight: 400; }
+        .hero h2 { 
+            font-family: 'Yantrajaal', sans-serif;
+            font-size: 2.5rem; 
+            margin: 0; 
+            color: #fff;
+        }
 
-        .btn-call {
-            background-color: var(--primary-green);
+        .hero p { font-size: 1.1rem; margin: 10px 0 20px; font-weight: 300; opacity: 0.9; }
+
+        /* Modern Button: Book Seat (Marathi) */
+        .btn-book {
+            background-color: var(--accent-green);
             color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
+            padding: 12px 30px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
-            display: flex;
+            font-family: 'Yantrajaal', sans-serif;
+            font-size: 1.2rem;
+            display: inline-flex;
             align-items: center;
-            gap: 12px;
-            transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(45, 106, 79, 0.3);
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(45, 106, 79, 0.4);
         }
 
-        .section { padding: 80px 10%; text-align: center; }
-        .section-title { font-size: 2.8rem; margin-bottom: 50px; position: relative; }
-        .section-title::after { content: ''; width: 80px; height: 5px; background: var(--primary-green); display: block; margin: 10px auto; border-radius: 2px; }
+        /* Content Sections */
+        .section { padding: 40px 15px; text-align: center; }
+        .section-title { 
+            font-family: 'Yantrajaal', sans-serif;
+            font-size: 2rem; 
+            margin-bottom: 30px; 
+            color: var(--primary-green);
+        }
 
+        /* Menu Grid */
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: 1fr; /* Default 1 column for mobile */
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .menu-grid { grid-template-columns: repeat(3, 1fr); }
+            .hero h2 { font-size: 4rem; }
+            .logo { font-size: 32px; }
         }
 
         .menu-item {
             background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: 0.4s;
-        }
-
-        .dish-img { width: 100%; height: 230px; object-fit: cover; }
-
-        .menu-content { padding: 25px; }
-        .menu-content h3 { font-size: 1.8rem; margin: 0 0 10px; }
-        .menu-content p { color: #555; font-size: 1.1rem; }
-
-        .highlight-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .highlight-box {
-            background: white;
-            padding: 40px 25px;
-            border-radius: 25px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            border-top: 6px solid var(--primary-green);
-        }
-
-        .highlight-box i { font-size: 3.5rem; color: var(--primary-green); margin-bottom: 20px; }
-
-        .contact-card {
-            background: white;
-            padding: 50px;
-            border-radius: 30px;
-            display: inline-block;
-            width: 100%;
-            max-width: 700px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-        }
-
-        .map-btn {
-            background: #fff5f5;
-            color: #d9534f;
-            padding: 18px 35px;
             border-radius: 15px;
-            text-decoration: none;
-            font-weight: 800;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            margin-top: 25px;
-            border: 2px solid #ffcccc;
-            transition: 0.3s;
-            font-size: 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        .map-btn:hover { background: #d9534f; color: white; border-color: #d9534f; }
 
-        footer { background: var(--dark-green); color: white; padding: 40px; text-align: center; }
+        .dish-img { width: 100%; height: 200px; object-fit: cover; }
+        .menu-content { padding: 15px; }
+        .menu-content h3 { font-family: 'Yantrajaal', sans-serif; font-size: 1.5rem; margin: 5px 0; }
 
-        @media (max-width: 768px) {
-            .hero h2 { font-size: 2.5rem; }
-            .section-title { font-size: 2.2rem; }
+        /* Highlight Cards */
+        .feature-card {
+            background: var(--white);
+            padding: 25px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            border-left: 5px solid var(--accent-green);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-align: left;
+        }
+
+        .feature-card i { font-size: 1.8rem; color: var(--accent-green); width: 40px; }
+        .feature-card h4 { margin: 0; font-family: 'Yantrajaal', sans-serif; font-size: 1.3rem; }
+
+        /* Contact Box */
+        .contact-box {
+            background: #fff;
+            padding: 30px 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .map-link {
+            display: block;
+            margin-top: 15px;
+            color: #d9534f;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: var(--primary-green);
+            color: white;
+            padding: 30px 15px;
+            text-align: center;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">
-            <i class="fas fa-utensils"></i> हॉटेल अन्नपूर्णा
-        </div>
+        <div class="logo">हॉटेल अन्नपूर्णा</div>
         <nav>
             <a href="#home">होम</a>
             <a href="#menu">मेन्यू</a>
@@ -176,78 +195,71 @@
 
     <div class="hero" id="home">
         <h2>शुद्ध सात्विक मेजवानी</h2>
-        <p>कोरेगावमधील शाकाहारी जेवणाचे सर्वोत्तम ठिकाण</p>
-        <a href="tel:+919665330230" class="btn-call">
-            <i class="fas fa-phone-alt"></i> आत्ताच कॉल करा
+        <p>कोरेगावमधील शाकाहारी जेवणाचे अग्रगण्य ठिकाण</p>
+        <a href="tel:+919665330230" class="btn-book">
+            <i class="fas fa-chair"></i> जागा बुक करा
         </a>
     </div>
 
     <div class="section" id="menu">
         <h2 class="section-title">आमचा खास मेन्यू</h2>
         <div class="menu-grid">
-            
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=500&q=60" alt="Paneer Tikka" class="dish-img">
+                <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=500&q=60" alt="Paneer" class="dish-img">
                 <div class="menu-content">
                     <h3>पनीर टिक्का मसाला</h3>
-                    <p>ताजे पनीर आणि खास मसालेदार ग्रेव्हीची मेजवानी.</p>
                 </div>
             </div>
-
             <div class="menu-item">
                 <img src="kaju-curry.webp" alt="Kaju Curry" class="dish-img">
                 <div class="menu-content">
                     <h3>काजू करी</h3>
-                    <p>श्रीमंत काजूची ग्रेव्ही आणि उत्कृष्ट सात्विक चव.</p>
                 </div>
             </div>
-
             <div class="menu-item">
-                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=500&q=60" alt="Special Thali" class="dish-img">
+                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=500&q=60" alt="Thali" class="dish-img">
                 <div class="menu-content">
                     <h3>अन्नपूर्णा स्पेशल थाळी</h3>
-                    <p>भरपूर पदार्थांसह पूर्ण आणि चविष्ट शाकाहारी जेवण.</p>
                 </div>
             </div>
-
         </div>
     </div>
 
-    <div class="section" id="special" style="background-color: var(--white);">
-        <h2 class="section-title">आमची खास वैशिष्ट्ये</h2>
-        <div class="highlight-container">
-            <div class="highlight-box">
-                <i class="fas fa-building"></i>
+    <div class="section" id="special">
+        <h2 class="section-title">आमची वैशिष्ट्ये</h2>
+        
+        <div class="feature-card">
+            <i class="fas fa-building"></i>
+            <div>
                 <h4>भव्य बँक्वेट हॉल</h4>
-                <p>वाढदिवस, साखरपुडा आणि कौटुंबिक सोहळ्यांसाठी कोरेगावमधील प्रशस्त हॉल.</p>
+                <p style="margin:5px 0 0; font-size:0.9rem;">कौटुंबिक सोहळ्यांसाठी प्रशस्त जागा.</p>
             </div>
-            <div class="highlight-box">
-                <i class="fas fa-check-circle"></i>
+        </div>
+
+        <div class="feature-card">
+            <i class="fas fa-leaf"></i>
+            <div>
                 <h4>१००% शुद्धता</h4>
-                <p>स्वच्छतेची आणि शुद्ध शाकाहारी जेवणाची पूर्ण खात्री.</p>
+                <p style="margin:5px 0 0; font-size:0.9rem;">अस्सल शाकाहारी आणि घरगुती चव.</p>
             </div>
-            <div class="highlight-box">
-                <i class="fas fa-car"></i>
+        </div>
+
+        <div class="feature-card">
+            <i class="fas fa-parking"></i>
+            <div>
                 <h4>प्रशस्त पार्किंग</h4>
-                <p>तुमच्या वाहनांसाठी सुरक्षित आणि मोठी पार्किंग सुविधा.</p>
+                <p style="margin:5px 0 0; font-size:0.9rem;">वाहनांसाठी सुरक्षित जागा उपलब्ध.</p>
             </div>
         </div>
     </div>
 
     <div class="section" id="contact">
-        <h2 class="section-title">संपर्क साधा</h2>
-        <div class="contact-card">
-            <p style="font-size: 1.3rem; margin-bottom: 15px;">
-                <i class="fas fa-map-marker-alt" style="color: var(--primary-green); margin-right: 10px;"></i> 
-                <strong>पत्ता:</strong> सातारा - पंढरपूर रोड, कोरेगाव, महाराष्ट्र
-            </p>
-            <p style="font-size: 1.3rem;">
-                <i class="fas fa-clock" style="color: var(--primary-green); margin-right: 10px;"></i> 
-                <strong>वेळ:</strong> सकाळी १०:०० ते रात्री ११:००
-            </p>
-            
-            <a href="https://maps.app.goo.gl/KB4kCv4tC2aQ7UUW6" class="map-btn" target="_blank">
-                <i class="fas fa-map-marked-alt"></i> गुगल मॅपवर दिशा पहा
+        <h2 class="section-title">संपर्क</h2>
+        <div class="contact-box">
+            <p><strong><i class="fas fa-map-marker-alt"></i> पत्ता:</strong> सातारा - पंढरपूर रोड, कोरेगाव, महाराष्ट्र</p>
+            <p><strong><i class="fas fa-clock"></i> वेळ:</strong> सकाळी १०:०० ते रात्री ११:००</p>
+            <a href="https://maps.app.goo.gl/KB4kCv4tC2aQ7UUW6" class="map-link" target="_blank">
+                <i class="fas fa-location-arrow"></i> गुगल मॅपवर दिशा पहा
             </a>
         </div>
     </div>

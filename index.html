@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>हॉटेल अन्नपूर्णा | Pure Veg & Banquet Hall</title>
+    <title>हॉटेल अन्नपूर्णा | शुद्ध शाकाहारी आणि बँक्वेट हॉल</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@400;600;800&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@400;600;800&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -13,78 +13,70 @@
         :root {
             --primary-green: #0a3d24;
             --accent-green: #1e7d4d;
-            --light-bg: #f4f7f5;
+            --light-bg: #f8faf9;
             --white: #ffffff;
             --text-dark: #1a1a1a;
             --gold: #c29547;
-            --shadow: 0 10px 25px rgba(0,0,0,0.1);
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
-        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; margin: 0; padding: 0; }
 
         body {
             font-family: 'Anek Devanagari', sans-serif;
-            margin: 0;
-            padding: 0;
             background-color: var(--light-bg);
             color: var(--text-dark);
             scroll-behavior: smooth;
             line-height: 1.6;
         }
 
-        /* Header & Navigation */
+        /* Navbar Styling */
         header {
             background: var(--white);
             padding: 15px 0 0 0;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: var(--shadow);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
         .logo { 
-            font-size: 30px; 
+            font-size: 32px; 
             font-weight: 800; 
             color: var(--primary-green);
-            margin: 0 0 12px 0;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         nav {
             background-color: var(--primary-green);
             display: flex;
             justify-content: center;
-            gap: 4px;
-            padding: 12px 2px;
+            gap: 5px;
+            padding: 12px 0;
         }
 
         nav a { 
             text-decoration: none; 
             color: var(--white); 
-            font-weight: 700; 
-            font-size: 11px; 
+            font-weight: 600; 
+            font-size: 13px;
             font-family: 'Montserrat', sans-serif;
-            white-space: nowrap;
-            padding: 5px 8px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
+            padding: 8px 15px;
+            transition: 0.3s;
+            border-radius: 5px;
         }
 
-        @media (min-width: 768px) {
-            .logo { font-size: 36px; }
-            nav { gap: 25px; }
-            nav a { font-size: 15px; }
-        }
+        nav a:hover { background: var(--accent-green); }
 
         /* Hero Section */
         .hero {
-            height: 65vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('annapurna.png');
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('annapurna.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -93,78 +85,71 @@
             align-items: center;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 0 20px;
         }
 
-        .hero h2 { font-size: 2.8rem; margin: 0; font-weight: 800; line-height: 1.1; }
-        .hero p { font-size: 1.2rem; margin: 15px 0 25px; font-family: 'Montserrat', sans-serif; }
+        .hero h2 { font-size: 3.5rem; font-weight: 800; margin-bottom: 15px; }
+        .hero p { font-size: 1.4rem; font-family: 'Montserrat', sans-serif; margin-bottom: 30px; opacity: 0.9; }
 
-        /* Booking Section */
-        .booking-section { background-color: #fff; padding: 40px 20px; border-radius: 20px; margin: 30px 15px; box-shadow: var(--shadow); border: 1px solid #eee; }
-        .booking-form { max-width: 500px; margin: auto; text-align: left; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-weight: 800; margin-bottom: 8px; color: var(--primary-green); font-size: 1.2rem; }
-        .form-group input { 
-            width: 100%; padding: 14px; border: 2px solid #ddd; border-radius: 10px; 
-            font-family: 'Montserrat', sans-serif; font-size: 1rem;
-        }
-
-        /* No Underline for Booking Button */
-        .btn-confirm {
-            background-color: #25D366; 
-            color: white; width: 100%; padding: 16px; border: none; border-radius: 10px;
-            font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 1.1rem;
-            cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
-            text-decoration: none; /* Underline Removed */
-        }
-
-        /* Section Styling */
-        .section { padding: 80px 15px; text-align: center; max-width: 1100px; margin: auto; }
-        .section-title { 
-            font-size: 2.6rem; 
-            margin-bottom: 50px; 
-            color: var(--primary-green); 
-            font-weight: 800; 
-            position: relative; 
-            display: inline-block;
-        }
-        .section-title::after { content: ''; width: 70%; height: 5px; background: var(--gold); display: block; margin: 10px auto 0; border-radius: 10px; }
+        /* General Section Styling */
+        .section { padding: 100px 10%; text-align: center; }
+        .section-title { font-size: 2.8rem; font-weight: 800; color: var(--primary-green); margin-bottom: 50px; position: relative; }
+        .section-title::after { content: ''; width: 80px; height: 5px; background: var(--gold); display: block; margin: 15px auto; border-radius: 5px; }
 
         /* Menu Grid */
-        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
-        @media (min-width: 768px) { .menu-grid { grid-template-columns: repeat(3, 1fr); } }
-
-        .menu-item { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .menu-item { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: 0.4s; }
+        .menu-item:hover { transform: translateY(-10px); }
         .dish-img { width: 100%; height: 250px; object-fit: cover; }
         .menu-content { padding: 25px; }
-        .menu-content h3 { font-size: 2rem; font-weight: 700; color: var(--primary-green); margin: 0; }
+        .menu-content h3 { font-size: 1.8rem; font-weight: 700; color: var(--primary-green); }
 
-        /* Features Section */
-        .features-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-        @media (min-width: 768px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
-
+        /* Features Box Styling */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .feature-box {
             background: var(--white);
             padding: 40px 30px;
             border-radius: 25px;
             box-shadow: var(--shadow);
             text-align: left;
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
             border-bottom: 8px solid var(--accent-green);
+            transition: 0.3s;
         }
+        .feature-box i { font-size: 3rem; color: var(--accent-green); margin-bottom: 20px; display: block; }
+        .feature-box h4 { font-size: 1.6rem; font-weight: 800; color: var(--primary-green); margin-bottom: 10px; }
 
-        .feature-box i { font-size: 3rem; color: var(--accent-green); flex-shrink: 0; }
-        .feature-box h4 { margin: 0; font-size: 1.8rem; font-weight: 800; color: var(--primary-green); }
-        .feature-box p { margin: 12px 0 0; font-size: 1.1rem; color: #444; font-weight: 400; }
+        /* Booking Form */
+        .booking-section { background: var(--white); border-radius: 30px; padding: 50px; box-shadow: var(--shadow); max-width: 600px; margin: 0 auto; }
+        .form-group { margin-bottom: 25px; text-align: left; }
+        .form-group label { display: block; font-weight: 700; margin-bottom: 8px; font-size: 1.1rem; }
+        .form-group input, .form-group select { width: 100%; padding: 15px; border: 2px solid #eee; border-radius: 12px; font-size: 1rem; outline: none; }
+        .form-group input:focus { border-color: var(--accent-green); }
 
-        /* Social Icons Size */
-        .social-icons { margin-top: 25px; display: flex; justify-content: center; gap: 35px; }
-        .social-icons i { font-size: 2.8rem; color: var(--white); transition: 0.3s; cursor: pointer; }
-        .social-icons i:hover { color: var(--gold); transform: scale(1.1); }
+        .btn-confirm {
+            background-color: #25D366;
+            color: white; width: 100%; padding: 18px; border: none; border-radius: 12px;
+            font-weight: 700; font-size: 1.2rem; cursor: pointer; transition: 0.3s;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+        }
+        .btn-confirm:hover { background-color: #1ebe57; transform: translateY(-3px); }
 
-        footer { background: var(--primary-green); color: white; padding: 60px 20px; text-align: center; }
+        /* Contact Section */
+        .contact-card { background: var(--white); padding: 50px; border-radius: 30px; box-shadow: var(--shadow); }
+        .contact-card p { font-size: 1.3rem; margin: 15px 0; }
+        .contact-card i { color: var(--accent-green); margin-right: 15px; }
+
+        /* Footer */
+        footer { background: var(--primary-green); color: white; padding: 80px 10%; text-align: center; }
+        .social-icons { display: flex; justify-content: center; gap: 30px; margin: 30px 0; }
+        .social-icons a { color: white; font-size: 2.5rem; transition: 0.3s; }
+        .social-icons a:hover { color: var(--gold); transform: scale(1.2); }
+
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2.5rem; }
+            .section { padding: 60px 5%; }
+            nav { gap: 2px; }
+            nav a { font-size: 11px; padding: 8px 10px; }
+        }
     </style>
 </head>
 <body>
@@ -172,24 +157,22 @@
     <header>
         <div class="logo"><i class="fas fa-leaf"></i> हॉटेल अन्नपूर्णा</div>
         <nav>
-            <a href="#home"><i class="fas fa-home"></i> HOME</a>
-            <a href="#menu"><i class="fas fa-utensils"></i> MENU</a>
-            <a href="#booking"><i class="fas fa-calendar-check"></i> BOOK</a>
-            <a href="#special"><i class="fas fa-star"></i> INFO</a>
-            <a href="#contact"><i class="fas fa-phone"></i> CONTACT</a>
+            <a href="#home">HOME</a>
+            <a href="#menu">MENU</a>
+            <a href="#booking">BOOKING</a>
+            <a href="#special">INFO</a>
+            <a href="#contact">CONTACT</a>
         </nav>
     </header>
 
-    <div class="hero" id="home">
+    <section class="hero" id="home">
         <h2>अस्सल शाकाहारी मेजवानी</h2>
-        <p>Premium Pure Veg Dining & Royal Banquet Hall</p>
-        <a href="#booking" class="btn-confirm" style="width:auto; padding: 18px 45px; background-color: var(--accent-green); text-decoration: none;">
-            Book Your Seat
-        </a>
-    </div>
+        <p>Best Pure Veg Restaurant & Banquet Hall in Koregaon</p>
+        <a href="#booking" style="background: var(--accent-green); color: white; text-decoration: none; padding: 15px 40px; border-radius: 50px; font-weight: 700; font-family: Montserrat;">BOOK NOW</a>
+    </section>
 
-    <div class="section" id="menu">
-        <h2 class="section-title"><i class="fas fa-utensils"></i> आमचा खास मेन्यू</h2>
+    <section class="section" id="menu">
+        <h2 class="section-title">आमचा खास मेन्यू</h2>
         <div class="menu-grid">
             <div class="menu-item">
                 <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=500&q=60" class="dish-img">
@@ -204,113 +187,76 @@
                 <div class="menu-content"><h3>स्पेशल थाळी</h3></div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="section" id="special">
-        <h2 class="section-title"><i class="fas fa-award"></i> आमची खास वैशिष्ट्ये</h2>
+    <section class="section" id="special" style="background-color: var(--white);">
+        <h2 class="section-title">आमची खास वैशिष्ट्ये</h2>
         <div class="features-grid">
             <div class="feature-box">
                 <i class="fas fa-hotel"></i>
-                <div>
-                    <h4>भव्य बँक्वेट हॉल</h4>
-                    <p>वाढदिवस, साखरपुडा आणि सर्व कौटुंबिक सोहळ्यांसाठी कोरेगावमधील सर्वोत्तम प्रशस्त हॉल उपलब्ध.</p>
-                </div>
+                <h4>भव्य बँक्वेट हॉल</h4>
+                <p>वाढदिवस, साखरपुडा आणि कौटुंबिक सोहळ्यांसाठी कोरेगावमधील सर्वोत्तम प्रशस्त हॉल.</p>
             </div>
             <div class="feature-box">
                 <i class="fas fa-leaf"></i>
-                <div>
-                    <h4>१००% शुद्ध शाकाहारी</h4>
-                    <p>आम्ही अन्नाची शुद्धता जपतो. उत्तम दर्जाचे तेल आणि ताजे मसाले वापरून बनवलेले पदार्थ.</p>
-                </div>
+                <h4>१००% शुद्ध शाकाहारी</h4>
+                <p>आम्ही अन्नाची शुद्धता जपतो. उत्तम दर्जाचे तेल आणि ताजे मसाले वापरून बनवलेले पदार्थ.</p>
             </div>
             <div class="feature-box">
                 <i class="fas fa-parking"></i>
-                <div>
-                    <h4>प्रशस्त पार्किंग सोय</h4>
-                    <p>तुमच्या वाहनांसाठी सुरक्षित, मोकळी आणि मोफत पार्किंग सुविधा हॉटेलच्या परिसरात आहे.</p>
-                </div>
-            </div>
-            <div class="feature-box">
-                <i class="fas fa-hands-bubbles"></i>
-                <div>
-                    <h4>स्वच्छता आणि हायजीन</h4>
-                    <p>स्वयंपाकघरापासून बसण्याच्या जागेपर्यंत सर्वत्र कडक स्वच्छतेचे नियम पाळले जातात.</p>
-                </div>
+                <h4>प्रशस्त पार्किंग सोय</h4>
+                <p>तुमच्या वाहनांसाठी सुरक्षित, मोकळी आणि मोफत पार्किंग सुविधा उपलब्ध.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="section" id="booking">
-        <h2 class="section-title"><i class="fas fa-chair"></i> Book Your Seat</h2>
+    <section class="section" id="booking">
+        <h2 class="section-title">जागा बुक करा</h2>
         <div class="booking-section">
-            <div class="booking-form">
-                <div class="form-group">
-                    <label>तुमचे नाव (Name):</label>
-                    <input type="text" id="custName" placeholder="तुमचे नाव लिहा">
-                </div>
-                <div class="form-group">
-                    <label>तारीख (Date):</label>
-                    <input type="date" id="bookDate">
-                </div>
-                <div class="form-group">
-                    <label>वेळ (Time - e.g. 8:30 PM):</label>
-                    <input type="text" id="bookTime" placeholder="उदा. ८:३० वाजता">
-                </div>
-                <div class="form-group">
-                    <label>व्यक्ती (Guests):</label>
-                    <input type="number" id="guests" value="2" min="1">
-                </div>
-                <button class="btn-confirm" onclick="sendToWhatsapp()">
-                    <i class="fab fa-whatsapp"></i> Confirm Booking via WhatsApp
-                </button>
+            <div class="form-group">
+                <label>तुमचे नाव</label>
+                <input type="text" id="custName" placeholder="नाव लिहा">
             </div>
+            <div class="form-group">
+                <label>तारीख</label>
+                <input type="date" id="bookDate">
+            </div>
+            <div class="form-group">
+                <label>वेळ</label>
+                <input type="text" id="bookTime" placeholder="उदा. ८:३० वाजता">
+            </div>
+            <div class="form-group">
+                <label>व्यक्ती</label>
+                <input type="number" id="guests" value="2" min="1">
+            </div>
+            <button class="btn-confirm" onclick="sendToWhatsapp()">
+                <i class="fab fa-whatsapp"></i> व्हाट्सएपद्वारे कन्फर्म करा
+            </button>
         </div>
-    </div>
+    </section>
 
-    <div class="section" id="contact">
-        <h2 class="section-title"><i class="fas fa-phone"></i> संपर्क आणि ठिकाण</h2>
-        <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: var(--shadow);">
-            <p><i class="fas fa-map-marker-alt" style="color:var(--accent-green)"></i> कोरेगाव, महाराष्ट्र ४१५५०१</p>
-            <p><i class="fas fa-phone-alt" style="color:var(--accent-green)"></i> +91 9373242452</p>
-            <a href="https://maps.app.goo.gl/KB4kCv4tC2aQ7UUW6" target="_blank" style="color:#d9534f; font-weight:800; text-decoration:none; font-size: 1.2rem;">
-                <i class="fas fa-directions"></i> गुगल मॅपवर आम्हाला शोधा
+    <section class="section" id="contact">
+        <h2 class="section-title">संपर्क</h2>
+        <div class="contact-card">
+            <p><i class="fas fa-map-marker-alt"></i> कोरेगाव, महाराष्ट्र ४१५५०१</p>
+            <p><i class="fas fa-phone-alt"></i> +91 9373242452</p>
+            <a href="https://maps.app.goo.gl/KB4kCv4tC2aQ7UUW6" target="_blank" style="color:var(--accent-green); font-weight:800; text-decoration:none; font-size: 1.2rem;">
+                <i class="fas fa-directions"></i> गुगल मॅपवर दिशा पहा
             </a>
         </div>
-    </div>
+    </section>
 
-<footer id="footer">
-        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 10px;">हॉटेल अन्नपूर्णा</h2>
-        <p style="font-size: 1.2rem; opacity: 0.9;">कोरेगावमधील शाकाहारी जेवणाचे अग्रगण्य नाव.</p>
-        
+    <footer>
+        <h2>हॉटेल अन्नपूर्णा</h2>
+        <p>शुद्ध शाकाहारी आणि सात्विक जेवणाचे अग्रगण्य ठिकाण</p>
         <div class="social-icons">
-            <a href="https://www.instagram.com/annapurna_pureveg_/?hl=en" style="color: white;"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/HotelAnnapurna.PureVeg/" style="color: white;"><i class="fab fa-facebook"></i></a>
-            <a href="https://wa.me/919373242452" style="color: white;"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.instagram.com/annapurna_pureveg_/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/HotelAnnapurna.PureVeg/"><i class="fab fa-facebook"></i></a>
+            <a href="https://wa.me/919373242452"><i class="fab fa-whatsapp"></i></a>
         </div>
-        
-        <p style="margin-top: 40px; font-size: 1rem; opacity: 0.6;">
-            © 2026 Hotel Annapurna | Designed by AmanXDigital
-        </p>
+        <p style="opacity: 0.6;">© 2026 Hotel Annapurna | Designed by AmanXDigital</p>
     </footer>
 
-    <style>
-        .social-icons {
-            margin-top: 25px;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-        }
-
-        .social-icons i {
-            font-size: 2rem; /* Size ko 3rem kiya hai jo kafi badi dikhegi */
-            transition: 0.3s ease;
-        }
-
-        .social-icons i:hover {
-            color: var(--gold);
-            transform: translateY(-5px);
-        }
-    </style>
     <script>
         function sendToWhatsapp() {
             let name = document.getElementById('custName').value;
@@ -320,18 +266,18 @@
             let phone = "919373242452"; 
 
             if(name == "" || date == "" || time == "") {
-                alert("कृपया सर्व माहिती (नाव, तारीख आणि वेळ) भरा!");
+                alert("कृपया पूर्ण माहिती भरा!");
                 return;
             }
 
-            let message = "🍱 *Hotel Annapurna Booking* %0A%0A" + 
-                          "*Name:* " + name + "%0A" + 
-                          "*Date:* " + date + "%0A" + 
-                          "*Time:* " + time + "%0A" + 
-                          "*Guests:* " + guests + "%0A%0A" +
-                          "कृपया आमची जागा बुक करा. धन्यवाद!";
+            let message = "🍱 *Hotel Annapurna Booking* \n\n" + 
+                          "*नाव:* " + name + "\n" + 
+                          "*तारीख:* " + date + "\n" + 
+                          "*वेळ:* " + time + "\n" + 
+                          "*व्यक्ती:* " + guests + "\n\n" +
+                          "कृपया आमचे बुकिंग कन्फर्म करा. धन्यवाद!";
 
-            window.open("https://wa.me/" + phone + "?text=" + message, '_blank');
+            window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(message), '_blank');
         }
     </script>
 

@@ -28,12 +28,14 @@
             scroll-behavior: smooth;
         }
 
-        /* Fixed Navigation Bar - Mobile Optimized */
+        /* --- NAVIGATION STRATEGY --- */
+        
+        /* Header - Desktop Only */
         header {
             position: sticky;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(15px);
             padding: 15px 5%;
             display: flex;
@@ -46,7 +48,7 @@
 
         .logo {
             font-family: 'Fraunces', serif;
-            font-size: 22px;
+            font-size: 26px;
             color: var(--primary);
             text-decoration: none;
             font-weight: 900;
@@ -55,7 +57,22 @@
             gap: 8px;
         }
 
-        /* Bottom Nav for Mobile - Always Visible */
+        header nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        header nav a:hover { color: var(--accent); }
+
+        /* Bottom Nav - Mobile Only (Scroll Friendly) */
         .mobile-nav {
             position: fixed;
             bottom: 0;
@@ -66,7 +83,7 @@
             justify-content: space-around;
             padding: 12px 0;
             z-index: 1001;
-            box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.3);
         }
 
         .mobile-nav a {
@@ -85,15 +102,20 @@
         .mobile-nav a i { font-size: 18px; color: var(--accent); }
         .mobile-nav a:hover { opacity: 1; }
 
-        /* Hide Mobile Nav on Desktop */
-        @media (min-width: 769px) {
-            .mobile-nav { display: none; }
-            .logo { font-size: 28px; }
+        /* Responsive Visibility Toggle */
+        @media (max-width: 768px) {
+            header nav { display: none; } /* PC menu hidden on mobile */
+            .logo { font-size: 22px; width: 100%; justify-content: center; }
         }
 
-        /* Hero Section */
+        @media (min-width: 769px) {
+            .mobile-nav { display: none; } /* Mobile bottom nav hidden on PC */
+        }
+
+        /* --- CONTENT SECTIONS --- */
+
         .hero {
-            height: 80vh;
+            height: 75vh;
             padding: 20px 4%;
             display: flex;
             align-items: center;
@@ -103,7 +125,7 @@
             width: 100%;
             height: 100%;
             border-radius: 40px;
-            background: linear-gradient(rgba(4, 47, 26, 0.8), rgba(4, 47, 26, 0.5)), url('annapurna.png');
+            background: linear-gradient(rgba(4, 47, 26, 0.75), rgba(4, 47, 26, 0.45)), url('annapurna.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -117,7 +139,7 @@
 
         .hero h2 {
             font-family: 'Anek Devanagari', sans-serif;
-            font-size: clamp(2rem, 8vw, 5rem);
+            font-size: clamp(2.2rem, 8vw, 5rem);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 20px;
@@ -127,7 +149,7 @@
             background: var(--accent);
             color: var(--primary);
             text-decoration: none;
-            padding: 20px 50px;
+            padding: 18px 45px;
             border-radius: 50px;
             font-weight: 800;
             text-transform: uppercase;
@@ -137,13 +159,12 @@
 
         .cta-main:hover { transform: scale(1.05); background: var(--white); }
 
-        /* Signature Menu */
         .section { padding: 80px 6%; }
-        .section-header h3 { font-family: 'Fraunces', serif; font-size: 3rem; color: var(--primary); margin-bottom: 50px; }
+        .section-header h3 { font-family: 'Fraunces', serif; font-size: 2.8rem; color: var(--primary); margin-bottom: 50px; text-align: center; }
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
@@ -156,14 +177,14 @@
         }
 
         .menu-card:hover { transform: translateY(-10px); }
-        .menu-img { width: 100%; height: 350px; object-fit: cover; border-radius: 20px; }
-        .menu-card h4 { font-family: 'Anek Devanagari', sans-serif; font-size: 1.8rem; margin-top: 20px; color: var(--primary); text-align: center; }
+        .menu-img { width: 100%; height: 320px; object-fit: cover; border-radius: 20px; }
+        .menu-card h4 { font-family: 'Anek Devanagari', sans-serif; font-size: 1.6rem; margin-top: 20px; color: var(--primary); text-align: center; }
 
-        /* Optimized Essence Section (Green Box) */
+        /* Essence Section (Green Box) */
         .essence {
             background: var(--primary);
             padding: 100px 6%;
-            border-radius: 60px;
+            border-radius: 50px;
             margin: 0 20px;
             color: var(--white);
         }
@@ -171,20 +192,12 @@
         .essence-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            gap: 30px;
         }
 
-        .essence-item { text-align: center; padding: 40px 20px; border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; }
-        .essence-item i { font-size: 3rem; color: var(--accent); margin-bottom: 25px; }
-        
-        /* Yellow Titles & White Text */
-        .essence-item h4 { 
-            color: var(--bright-yellow); 
-            font-size: 1.8rem; 
-            font-weight: 800; 
-            margin-bottom: 15px; 
-            font-family: 'Anek Devanagari', sans-serif;
-        }
+        .essence-item { text-align: center; padding: 40px 20px; border: 1px solid rgba(255,255,255,0.08); border-radius: 30px; }
+        .essence-item i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
+        .essence-item h4 { color: var(--bright-yellow); font-size: 1.6rem; font-weight: 800; margin-bottom: 15px; font-family: 'Anek Devanagari', sans-serif; }
         .essence-item p { color: var(--white); font-size: 1.1rem; opacity: 0.9; }
 
         /* Booking Form */
@@ -192,7 +205,7 @@
             max-width: 800px;
             margin: -50px auto 80px;
             background: var(--white);
-            padding: 50px;
+            padding: 40px;
             border-radius: 40px;
             box-shadow: 0 40px 80px rgba(0,0,0,0.05);
             position: relative;
@@ -200,32 +213,29 @@
         }
 
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .field label { font-size: 12px; font-weight: 800; color: #888; letter-spacing: 1px; display: block; margin-bottom: 10px; }
-        .field input { width: 100%; padding: 18px; border-radius: 15px; border: 2px solid #f0f0f0; outline: none; transition: 0.3s; }
-        .field input:focus { border-color: var(--accent); }
-
-        @media (max-width: 600px) {
-            .form-grid { grid-template-columns: 1fr; }
-            .reserve-container { padding: 30px 20px; width: 92%; }
-            .hero h2 { font-size: 2.5rem; }
+        .field label { font-size: 11px; font-weight: 800; color: #888; letter-spacing: 1px; display: block; margin-bottom: 8px; }
+        .field input { width: 100%; padding: 16px; border-radius: 12px; border: 2px solid #f0f0f0; outline: none; }
+        
+        .btn-wa {
+            background: #25D366;
+            color: white; width: 100%; padding: 18px; border: none; border-radius: 12px;
+            font-weight: 800; font-size: 1.1rem; cursor: pointer; margin-top: 25px;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
         }
 
-        footer { padding: 100px 5% 120px; text-align: center; }
-        .socials a { font-size: 2.5rem; color: var(--primary); margin: 0 20px; transition: 0.4s; }
-        .socials a:hover { color: var(--accent); transform: translateY(-10px); }
+        footer { padding: 80px 5% 120px; text-align: center; }
+        .socials a { font-size: 2.2rem; color: var(--primary); margin: 0 15px; transition: 0.4s; }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">
-            <i class="fas fa-leaf"></i> ANNAPURNA
-        </a>
-        <nav class="desktop-only" style="display: flex; gap: 30px;">
-            <a href="#home" style="text-decoration: none; color: var(--primary); font-weight: 700;">HOME</a>
-            <a href="#menu" style="text-decoration: none; color: var(--primary); font-weight: 700;">MENU</a>
-            <a href="#booking" style="text-decoration: none; color: var(--primary); font-weight: 700;">RESERVATION</a>
-            <a href="#contact" style="text-decoration: none; color: var(--primary); font-weight: 700;">CONTACT</a>
+        <a href="#" class="logo"><i class="fas fa-leaf"></i> ANNAPURNA</a>
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#menu">MENU</a>
+            <a href="#booking">BOOKING</a>
+            <a href="#contact">CONTACT</a>
         </nav>
     </header>
 
@@ -239,16 +249,14 @@
 
     <section class="hero" id="home">
         <div class="hero-inner">
-            <p style="letter-spacing: 5px; color: var(--accent); margin-bottom: 20px;">ROYAL DINING EXPERIENCE</p>
+            <p style="letter-spacing: 5px; color: var(--accent); margin-bottom: 15px; font-weight: 700;">ROYAL PURE VEG</p>
             <h2>अस्सल शाकाहारी<br>मेजवानी</h2>
-            <a href="#booking" class="cta-main">Book Your Seat</a>
+            <a href="#booking" class="cta-main">Book Now</a>
         </div>
     </section>
 
     <section class="section" id="menu">
-        <div class="section-header">
-            <h3>Signature Taste</h3>
-        </div>
+        <div class="section-header"><h3>The Collection</h3></div>
         <div class="menu-grid">
             <div class="menu-card">
                 <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80" class="menu-img">
@@ -258,52 +266,51 @@
                 <img src="kaju-curry.webp" class="menu-img">
                 <h4>काजू मसाला करी</h4>
             </div>
-            <div class="menu-card">
+            <div class="menu-item menu-card">
                 <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" class="menu-img">
-                <h4>स्पेशल थाळी</h4>
+                <h4>अन्नपूर्णा स्पेशल थाळी</h4>
             </div>
         </div>
     </section>
 
     <section class="essence" id="special">
-        <h3 style="font-family: 'Fraunces'; font-size: 3rem; margin-bottom: 60px; text-align: center; color: var(--white);">The Essence</h3>
         <div class="essence-grid">
             <div class="essence-item">
                 <i class="fas fa-hotel"></i>
                 <h4>भव्य बँक्वेट हॉल</h4>
-                <p>वाढदिवस, साखरपुडा आणि कौटुंबिक सोहळ्यांसाठी कोरेगावमधील सर्वोत्तम आणि प्रशस्त हॉल.</p>
+                <p>वाढदिवस आणि कौटुंबिक सोहळ्यांसाठी कोरेगावमधील सर्वोत्तम हॉल.</p>
             </div>
             <div class="essence-item">
                 <i class="fas fa-certificate"></i>
                 <h4>१००% शुद्धता</h4>
-                <p>स्वच्छ किचन आणि अस्सल सात्विक चवीची पूर्ण खात्री आम्ही देतो.</p>
+                <p>स्वच्छ किचन आणि अस्सल सात्विक चवीची पूर्ण खात्री.</p>
             </div>
-            <div class="feature-box essence-item">
+            <div class="essence-item">
                 <i class="fas fa-parking"></i>
                 <h4>प्रशस्त पार्किंग</h4>
-                <p>तुमच्या वाहनांसाठी सुरक्षित आणि प्रशस्त पार्किंग सुविधा हॉटेलच्या परिसरात उपलब्ध.</p>
+                <p>तुमच्या वाहनांसाठी सुरक्षित पार्किंग सुविधा उपलब्ध.</p>
             </div>
         </div>
     </section>
 
     <div class="reserve-container" id="booking">
-        <h4 style="font-family: 'Fraunces'; font-size: 2.2rem; text-align: center; margin-bottom: 40px;">Book A Table</h4>
+        <h4 style="font-family: 'Fraunces'; font-size: 2rem; text-align: center; margin-bottom: 30px;">Reservation</h4>
         <div class="form-grid">
             <div class="field"><label>NAME</label><input type="text" id="custName" placeholder="तुमचे नाव"></div>
             <div class="field"><label>GUESTS</label><input type="number" id="guests" value="2"></div>
             <div class="field"><label>DATE</label><input type="date" id="bookDate"></div>
             <div class="field"><label>TIME</label><input type="text" id="bookTime" placeholder="उदा. ८:३० PM"></div>
         </div>
-        <button onclick="sendToWhatsapp()" class="cta-main" style="width: 100%; border: none; margin-top: 30px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;">
-            <i class="fab fa-whatsapp"></i> Confirm via WhatsApp
+        <button onclick="sendToWhatsapp()" class="btn-wa">
+            <i class="fab fa-whatsapp"></i> Confirm Booking
         </button>
     </div>
 
-    <section class="section" id="contact" style="text-align: center;">
-        <h3 style="font-family: 'Fraunces'; font-size: 3rem; margin-bottom: 30px;">Visit Us</h3>
-        <p style="font-size: 1.5rem; color: var(--primary);">कोरेगाव, महाराष्ट्र ४१५५०१</p>
-        <p style="font-size: 1.5rem; font-weight: 800; color: var(--accent); margin: 15px 0;">+91 9373242452</p>
-        <a href="https://maps.app.goo.gl/KB4kCv4tC2aQ7UUW6" target="_blank" style="color: var(--primary); font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 5px;">VIEW ON MAPS</a>
+    <section class="section" id="contact" style="text-align: center; padding-bottom: 20px;">
+        <h3 style="font-family: 'Fraunces'; font-size: 2.5rem; margin-bottom: 25px;">Contact</h3>
+        <p style="font-size: 1.4rem; font-weight: 800; color: var(--accent);">+91 9373242452</p>
+        <p style="margin: 10px 0;">कोरेगाव, महाराष्ट्र ४१५५०१</p>
+        <a href="https://maps.app.goo.gl/KB4kCv4tC2aQ7UUW6" target="_blank" style="color: var(--primary); font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 5px;">GET DIRECTIONS</a>
     </section>
 
     <footer>
@@ -312,7 +319,7 @@
             <a href="https://www.facebook.com/HotelAnnapurna.PureVeg/"><i class="fab fa-facebook"></i></a>
             <a href="https://wa.me/919373242452"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <p style="opacity: 0.3; font-size: 0.9rem; font-weight: 700; margin-top: 40px;">© 2026 HOTEL ANNAPURNA. CRAFTED BY AMANXDIGITAL</p>
+        <p style="opacity: 0.4; font-size: 0.8rem; margin-top: 30px; font-weight: 700;">© 2026 HOTEL ANNAPURNA. BY AMANXDIGITAL</p>
     </footer>
 
     <script>
@@ -321,15 +328,9 @@
             const date = document.getElementById('bookDate').value;
             const time = document.getElementById('bookTime').value;
             const guests = document.getElementById('guests').value;
-            const phone = "919373242452"; 
-
-            if(!name || !date || !time) {
-                alert("कृपया पूर्ण माहिती भरा!");
-                return;
-            }
-
-            const message = `🍱 *Hotel Annapurna Booking* \n\n*Name:* ${name}\n*Date:* ${date}\n*Time:* ${time}\n*Guests:* ${guests}\n\nकृपया आमची जागा बुक करा. धन्यवाद!`;
-            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+            if(!name || !date || !time) { alert("कृपया पूर्ण माहिती भरा!"); return; }
+            const message = `🍱 *Hotel Annapurna Booking* \n\n*Name:* ${name}\n*Date:* ${date}\n*Time:* ${time}\n*Guests:* ${guests}\n\nकृपया कन्फर्म करा. धन्यवाद!`;
+            window.open(`https://wa.me/919373242452?text=${encodeURIComponent(message)}`, '_blank');
         }
     </script>
 </body>

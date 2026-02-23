@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>हॉटेल अन्नपूर्णा | Pure Veg & Royal Banquet</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@300;500;800&family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&family=Plus+Jakarta+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@300;600;800&family=Fraunces:wght@700;900&family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
             --primary: #042f1a;      /* Deep Forest Green */
             --accent: #d4af37;       /* Metallic Gold */
-            --off-white: #fcfaf2;    /* Elegant Cream */
-            --glass-white: rgba(255, 255, 255, 0.9);
-            --transition: cubic-bezier(0.23, 1, 0.32, 1);
+            --bright-yellow: #ffcc00; /* Sharp Yellow for Titles */
+            --off-white: #fcfaf2;    /* Elegant Cream Background */
+            --white: #ffffff;
+            --transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -27,263 +28,218 @@
             scroll-behavior: smooth;
         }
 
-        /* Dynamic Mesh Background */
-        .mesh-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(at 0% 0%, #e8f5e9 0, transparent 50%), 
-                        radial-gradient(at 100% 100%, #fffde7 0, transparent 50%);
-            z-index: -1;
-            opacity: 0.6;
-        }
-
-        /* Minimalist Floating Nav */
+        /* Fixed Navigation Bar - Mobile Optimized */
         header {
             position: sticky;
-            top: 20px;
-            width: 92%;
-            margin: 0 auto;
-            background: var(--glass-white);
-            backdrop-filter: blur(20px);
-            padding: 12px 35px;
-            border-radius: 24px;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border: 1px solid rgba(4, 47, 26, 0.1);
+            border-bottom: 1px solid rgba(4, 47, 26, 0.1);
             z-index: 1000;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
         }
 
         .logo {
             font-family: 'Fraunces', serif;
-            font-size: 26px;
+            font-size: 22px;
             color: var(--primary);
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 900;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
-        nav { display: flex; gap: 28px; }
-        nav a {
+        /* Bottom Nav for Mobile - Always Visible */
+        .mobile-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: var(--primary);
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            z-index: 1001;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+        }
+
+        .mobile-nav a {
+            color: var(--white);
             text-decoration: none;
-            color: var(--primary);
-            font-size: 13px;
+            font-size: 10px;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
             font-weight: 700;
-            letter-spacing: 1.5px;
-            transition: var(--transition);
-            opacity: 0.7;
+            opacity: 0.8;
         }
-        nav a:hover { opacity: 1; color: var(--accent); }
 
-        /* Hero: Depth and Staggered Reveal */
+        .mobile-nav a i { font-size: 18px; color: var(--accent); }
+        .mobile-nav a:hover { opacity: 1; }
+
+        /* Hide Mobile Nav on Desktop */
+        @media (min-width: 769px) {
+            .mobile-nav { display: none; }
+            .logo { font-size: 28px; }
+        }
+
+        /* Hero Section */
         .hero {
-            height: 85vh;
+            height: 80vh;
+            padding: 20px 4%;
             display: flex;
             align-items: center;
-            padding: 0 6%;
-            margin-top: 40px;
         }
 
         .hero-inner {
             width: 100%;
             height: 100%;
             border-radius: 40px;
-            background: linear-gradient(135deg, rgba(4, 47, 26, 0.95) 0%, rgba(4, 47, 26, 0.4) 100%), url('annapurna.png');
+            background: linear-gradient(rgba(4, 47, 26, 0.8), rgba(4, 47, 26, 0.5)), url('annapurna.png');
             background-size: cover;
             background-position: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 0 8%;
+            align-items: center;
+            text-align: center;
             color: white;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.15);
-            animation: heroReveal 1.4s var(--transition);
-        }
-
-        @keyframes heroReveal {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
+            box-shadow: 0 40px 100px rgba(0,0,0,0.1);
         }
 
         .hero h2 {
             font-family: 'Anek Devanagari', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 5.5rem);
-            line-height: 1;
-            margin-bottom: 25px;
+            font-size: clamp(2rem, 8vw, 5rem);
             font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
         }
 
-        .hero p {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            color: var(--accent);
-            margin-bottom: 40px;
-        }
-
-        /* Elegant Reservation Button */
         .cta-main {
             background: var(--accent);
             color: var(--primary);
             text-decoration: none;
-            padding: 22px 55px;
-            border-radius: 16px;
+            padding: 20px 50px;
+            border-radius: 50px;
             font-weight: 800;
-            display: inline-block;
-            width: max-content;
-            transition: var(--transition);
-            font-size: 0.9rem;
-            letter-spacing: 2px;
             text-transform: uppercase;
-        }
-        .cta-main:hover {
-            transform: translateY(-5px) rotate(-1deg);
-            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
+            letter-spacing: 2px;
+            transition: var(--transition);
         }
 
-        /* Distinctive Menu Grid */
-        .section { padding: 100px 8%; }
-        .section-header { margin-bottom: 70px; text-align: left; }
-        .section-header h3 { 
-            font-family: 'Fraunces', serif; 
-            font-size: 3.5rem; 
-            color: var(--primary);
-        }
+        .cta-main:hover { transform: scale(1.05); background: var(--white); }
+
+        /* Signature Menu */
+        .section { padding: 80px 6%; }
+        .section-header h3 { font-family: 'Fraunces', serif; font-size: 3rem; color: var(--primary); margin-bottom: 50px; }
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
 
         .menu-card {
             background: var(--white);
             padding: 15px;
-            border-radius: 32px;
-            transition: var(--transition);
-            border: 1px solid rgba(0,0,0,0.03);
-            position: relative;
-        }
-        .menu-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 30px 60px rgba(4, 47, 26, 0.1);
-        }
-
-        .menu-img {
-            width: 100%;
-            height: 380px;
-            object-fit: cover;
-            border-radius: 24px;
-            margin-bottom: 25px;
-        }
-
-        .menu-card h4 {
-            font-family: 'Anek Devanagari', sans-serif;
-            font-size: 1.8rem;
-            color: var(--primary);
-            padding-left: 10px;
-        }
-
-        /* Feature Section: Contrast Theme */
-        .features {
-            background: var(--primary);
-            color: var(--white);
-            padding: 120px 8%;
-            border-radius: 60px;
-            margin: 0 2%;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-        }
-
-        .feature-item {
-            padding: 40px;
-            background: rgba(255,255,255,0.03);
             border-radius: 30px;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.4s;
-        }
-        .feature-item:hover { background: rgba(255,255,255,0.07); }
-        .feature-item i { font-size: 2.5rem; color: var(--accent); margin-bottom: 25px; }
-
-        /* Ultra-Clean Reservation Form */
-        .reserve-box {
-            background: var(--white);
-            border-radius: 40px;
-            padding: 70px;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.04);
-            max-width: 900px;
-            margin: -60px auto 0;
-            z-index: 10;
-            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            transition: var(--transition);
         }
 
-        .input-grid {
+        .menu-card:hover { transform: translateY(-10px); }
+        .menu-img { width: 100%; height: 350px; object-fit: cover; border-radius: 20px; }
+        .menu-card h4 { font-family: 'Anek Devanagari', sans-serif; font-size: 1.8rem; margin-top: 20px; color: var(--primary); text-align: center; }
+
+        /* Optimized Essence Section (Green Box) */
+        .essence {
+            background: var(--primary);
+            padding: 100px 6%;
+            border-radius: 60px;
+            margin: 0 20px;
+            color: var(--white);
+        }
+
+        .essence-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
         }
 
-        .field label { font-size: 0.75rem; font-weight: 800; letter-spacing: 2px; color: #888; margin-bottom: 12px; display: block; }
-        .field input {
-            width: 100%;
-            padding: 20px;
-            background: #f9f9f9;
-            border: 2px solid transparent;
-            border-radius: 18px;
-            font-size: 1rem;
-            transition: 0.3s;
+        .essence-item { text-align: center; padding: 40px 20px; border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; }
+        .essence-item i { font-size: 3rem; color: var(--accent); margin-bottom: 25px; }
+        
+        /* Yellow Titles & White Text */
+        .essence-item h4 { 
+            color: var(--bright-yellow); 
+            font-size: 1.8rem; 
+            font-weight: 800; 
+            margin-bottom: 15px; 
+            font-family: 'Anek Devanagari', sans-serif;
         }
-        .field input:focus { border-color: var(--accent); background: white; outline: none; }
+        .essence-item p { color: var(--white); font-size: 1.1rem; opacity: 0.9; }
 
-        /* Responsive Fixes */
-        @media (max-width: 768px) {
-            header { padding: 12px 20px; width: 95%; border-radius: 16px; }
-            nav { display: none; }
-            .hero { height: auto; padding-top: 50px; }
-            .hero-inner { border-radius: 25px; padding: 60px 30px; }
-            .hero h2 { font-size: 3rem; }
-            .input-grid { grid-template-columns: 1fr; }
-            .reserve-box { padding: 40px 25px; border-radius: 30px; width: 92%; }
-            .section-header h3 { font-size: 2.5rem; }
+        /* Booking Form */
+        .reserve-container {
+            max-width: 800px;
+            margin: -50px auto 80px;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 40px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 10;
         }
 
-        footer {
-            padding: 100px 5% 40px;
-            text-align: center;
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .field label { font-size: 12px; font-weight: 800; color: #888; letter-spacing: 1px; display: block; margin-bottom: 10px; }
+        .field input { width: 100%; padding: 18px; border-radius: 15px; border: 2px solid #f0f0f0; outline: none; transition: 0.3s; }
+        .field input:focus { border-color: var(--accent); }
+
+        @media (max-width: 600px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .reserve-container { padding: 30px 20px; width: 92%; }
+            .hero h2 { font-size: 2.5rem; }
         }
-        .socials { display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; }
-        .socials a { font-size: 2.2rem; color: var(--primary); transition: 0.4s; }
-        .socials a:hover { color: var(--accent); transform: translateY(-8px); }
+
+        footer { padding: 100px 5% 120px; text-align: center; }
+        .socials a { font-size: 2.5rem; color: var(--primary); margin: 0 20px; transition: 0.4s; }
+        .socials a:hover { color: var(--accent); transform: translateY(-10px); }
     </style>
 </head>
 <body>
-
-    <div class="mesh-bg"></div>
 
     <header>
         <a href="#" class="logo">
             <i class="fas fa-leaf"></i> ANNAPURNA
         </a>
-        <nav>
-            <a href="#home">HOME</a>
-            <a href="#menu">MENU</a>
-            <a href="#booking">BOOKING</a>
-            <a href="#special">ABOUT</a>
-            <a href="#contact">CONTACT</a>
+        <nav class="desktop-only" style="display: flex; gap: 30px;">
+            <a href="#home" style="text-decoration: none; color: var(--primary); font-weight: 700;">HOME</a>
+            <a href="#menu" style="text-decoration: none; color: var(--primary); font-weight: 700;">MENU</a>
+            <a href="#booking" style="text-decoration: none; color: var(--primary); font-weight: 700;">RESERVATION</a>
+            <a href="#contact" style="text-decoration: none; color: var(--primary); font-weight: 700;">CONTACT</a>
         </nav>
     </header>
 
+    <div class="mobile-nav">
+        <a href="#home"><i class="fas fa-home"></i>HOME</a>
+        <a href="#menu"><i class="fas fa-utensils"></i>MENU</a>
+        <a href="#booking"><i class="fas fa-calendar-check"></i>BOOK</a>
+        <a href="#special"><i class="fas fa-info-circle"></i>INFO</a>
+        <a href="#contact"><i class="fas fa-phone"></i>CONTACT</a>
+    </div>
+
     <section class="hero" id="home">
         <div class="hero-inner">
-            <p>Established 2026 • Koregaon</p>
+            <p style="letter-spacing: 5px; color: var(--accent); margin-bottom: 20px;">ROYAL DINING EXPERIENCE</p>
             <h2>अस्सल शाकाहारी<br>मेजवानी</h2>
             <a href="#booking" class="cta-main">Book Your Seat</a>
         </div>
@@ -291,7 +247,7 @@
 
     <section class="section" id="menu">
         <div class="section-header">
-            <h3>The Signature Collection</h3>
+            <h3>Signature Taste</h3>
         </div>
         <div class="menu-grid">
             <div class="menu-card">
@@ -304,63 +260,50 @@
             </div>
             <div class="menu-card">
                 <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=800&q=80" class="menu-img">
-                <h4>अन्नपूर्णा स्पेशल थाळी</h4>
+                <h4>स्पेशल थाळी</h4>
             </div>
         </div>
     </section>
 
-    <section class="features" id="special">
-        <div class="section-header">
-            <h3 style="color: white;">Our Essence</h3>
-        </div>
-        <div class="features-grid">
-            <div class="feature-item">
+    <section class="essence" id="special">
+        <h3 style="font-family: 'Fraunces'; font-size: 3rem; margin-bottom: 60px; text-align: center; color: var(--white);">The Essence</h3>
+        <div class="essence-grid">
+            <div class="essence-item">
                 <i class="fas fa-hotel"></i>
-                <h4 style="font-size: 1.8rem; margin-bottom: 15px;">भव्य बँक्वेट हॉल</h4>
-                <p style="opacity: 0.6;">सर्व मंगल कार्यांसाठी कोरेगावमधील सर्वोत्तम आणि प्रशस्त हॉल.</p>
+                <h4>भव्य बँक्वेट हॉल</h4>
+                <p>वाढदिवस, साखरपुडा आणि कौटुंबिक सोहळ्यांसाठी कोरेगावमधील सर्वोत्तम आणि प्रशस्त हॉल.</p>
             </div>
-            <div class="feature-item">
-                <i class="fas fa-seedling"></i>
-                <h4 style="font-size: 1.8rem; margin-bottom: 15px;">१००% शुद्धता</h4>
-                <p style="opacity: 0.6;">आरोग्यदायी आणि अस्सल सात्विक चवीची पूर्ण खात्री.</p>
+            <div class="essence-item">
+                <i class="fas fa-certificate"></i>
+                <h4>१००% शुद्धता</h4>
+                <p>स्वच्छ किचन आणि अस्सल सात्विक चवीची पूर्ण खात्री आम्ही देतो.</p>
             </div>
-            <div class="feature-item">
+            <div class="feature-box essence-item">
                 <i class="fas fa-parking"></i>
-                <h4 style="font-size: 1.8rem; margin-bottom: 15px;">मोफत पार्किंग</h4>
-                <p style="opacity: 0.6;">तुमच्या वाहनांसाठी सुरक्षित आणि प्रशस्त जागा उपलब्ध.</p>
+                <h4>प्रशस्त पार्किंग</h4>
+                <p>तुमच्या वाहनांसाठी सुरक्षित आणि प्रशस्त पार्किंग सुविधा हॉटेलच्या परिसरात उपलब्ध.</p>
             </div>
         </div>
     </section>
 
-    <div class="reserve-box" id="booking">
-        <h4 style="font-family: 'Fraunces', serif; font-size: 2.5rem; margin-bottom: 40px; text-align: center;">Make a Reservation</h4>
-        <div class="input-grid">
-            <div class="field">
-                <label>FULL NAME</label>
-                <input type="text" id="custName" placeholder="नाव लिहा">
-            </div>
-            <div class="field">
-                <label>GUESTS</label>
-                <input type="number" id="guests" value="2">
-            </div>
-            <div class="field">
-                <label>DATE</label>
-                <input type="date" id="bookDate">
-            </div>
-            <div class="field">
-                <label>PREFERRED TIME</label>
-                <input type="text" id="bookTime" placeholder="उदा. ८:३० PM">
-            </div>
+    <div class="reserve-container" id="booking">
+        <h4 style="font-family: 'Fraunces'; font-size: 2.2rem; text-align: center; margin-bottom: 40px;">Book A Table</h4>
+        <div class="form-grid">
+            <div class="field"><label>NAME</label><input type="text" id="custName" placeholder="तुमचे नाव"></div>
+            <div class="field"><label>GUESTS</label><input type="number" id="guests" value="2"></div>
+            <div class="field"><label>DATE</label><input type="date" id="bookDate"></div>
+            <div class="field"><label>TIME</label><input type="text" id="bookTime" placeholder="उदा. ८:३० PM"></div>
         </div>
-        <button class="cta-main" style="width: 100%; margin-top: 40px; padding: 25px;" onclick="sendToWhatsapp()">Confirm Reservation</button>
+        <button onclick="sendToWhatsapp()" class="cta-main" style="width: 100%; border: none; margin-top: 30px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <i class="fab fa-whatsapp"></i> Confirm via WhatsApp
+        </button>
     </div>
 
     <section class="section" id="contact" style="text-align: center;">
-        <h3 style="font-family: 'Fraunces', serif; font-size: 3rem; margin-bottom: 30px;">Visit Us</h3>
-        <p style="font-size: 1.5rem; margin-bottom: 20px;">कोरेगाव, महाराष्ट्र ४१५५०१</p>
-        <p style="font-size: 1.5rem; font-weight: 700; color: var(--accent);">+91 9373242452</p>
-        <br>
-        <a href="https://maps.app.goo.gl/KB4kCv4tC2aQ7UUW6" target="_blank" style="color: var(--primary); font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--accent);">VIEW ON MAPS</a>
+        <h3 style="font-family: 'Fraunces'; font-size: 3rem; margin-bottom: 30px;">Visit Us</h3>
+        <p style="font-size: 1.5rem; color: var(--primary);">कोरेगाव, महाराष्ट्र ४१५५०१</p>
+        <p style="font-size: 1.5rem; font-weight: 800; color: var(--accent); margin: 15px 0;">+91 9373242452</p>
+        <a href="https://maps.app.goo.gl/KB4kCv4tC2aQ7UUW6" target="_blank" style="color: var(--primary); font-weight: 800; text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 5px;">VIEW ON MAPS</a>
     </section>
 
     <footer>
@@ -369,7 +312,7 @@
             <a href="https://www.facebook.com/HotelAnnapurna.PureVeg/"><i class="fab fa-facebook"></i></a>
             <a href="https://wa.me/919373242452"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <p style="opacity: 0.3; font-size: 0.9rem; font-weight: 700;">© 2026 HOTEL ANNAPURNA. CRAFTED BY AMANXDIGITAL</p>
+        <p style="opacity: 0.3; font-size: 0.9rem; font-weight: 700; margin-top: 40px;">© 2026 HOTEL ANNAPURNA. CRAFTED BY AMANXDIGITAL</p>
     </footer>
 
     <script>
@@ -381,7 +324,7 @@
             const phone = "919373242452"; 
 
             if(!name || !date || !time) {
-                alert("Please fill all details!");
+                alert("कृपया पूर्ण माहिती भरा!");
                 return;
             }
 
